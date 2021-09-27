@@ -4,6 +4,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:task_loginui/screens/listdata.dart';
 import 'package:task_loginui/screens/listusers.dart';
 import 'package:task_loginui/screens/registerscreen.dart';
+import 'package:task_loginui/utils/authentication.dart';
+import 'package:task_loginui/widgets/google_sign_in_button.dart';
 
 final colorGreen = HexColor("#09b976");
 
@@ -73,6 +75,19 @@ class _LoginScreenState extends State<LoginScreen> {
           SizedBox(
             height: 20.0,
           ),
+          FutureBuilder(
+              future: Authentication.initializeFirebase(context: context),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return Text('Error initializing Firebase');
+                } else if (snapshot.connectionState == ConnectionState.done) {
+                  return GoogleSignInButton();
+                }
+                return CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                  Colors.orange,
+                ));
+              }),
           SizedBox(
             height: 20.0,
           ),
