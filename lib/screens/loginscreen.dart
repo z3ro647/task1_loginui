@@ -5,6 +5,7 @@ import 'package:task_loginui/screens/listdata.dart';
 import 'package:task_loginui/screens/listusers.dart';
 import 'package:task_loginui/screens/registerscreen.dart';
 import 'package:task_loginui/utils/authentication.dart';
+import 'package:task_loginui/utils/phoneVarification.dart';
 import 'package:task_loginui/widgets/google_sign_in_button.dart';
 
 final colorGreen = HexColor("#09b976");
@@ -62,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    //verifyPhoneNumber(mobileNumber.text);
+                    verifyPhoneNumber(mobileNumber.text);
                   }
                 },
                 child: Text('Login'),
@@ -118,7 +119,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     Navigator.push(
                         context,
-                        //MaterialPageRoute(builder: (context) => ListData()));
                         MaterialPageRoute(builder: (context) => ListData()));
                   },
                   child: Text('List')),
