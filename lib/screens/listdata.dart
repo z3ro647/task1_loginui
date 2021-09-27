@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:task_loginui/module/order.dart';
+import 'package:task_loginui/models/order.dart';
 
 final colorGreen = HexColor("#09b976");
 

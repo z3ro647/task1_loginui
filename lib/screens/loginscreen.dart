@@ -6,6 +6,7 @@ import 'package:task_loginui/screens/listusers.dart';
 import 'package:task_loginui/screens/registerscreen.dart';
 import 'package:task_loginui/utils/authentication.dart';
 import 'package:task_loginui/utils/phoneVarification.dart';
+import 'package:task_loginui/weatherscreen.dart';
 import 'package:task_loginui/widgets/google_sign_in_button.dart';
 
 final colorGreen = HexColor("#09b976");
@@ -74,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           SizedBox(
-            height: 20.0,
+            height: 10.0,
           ),
           FutureBuilder(
               future: Authentication.initializeFirebase(context: context),
@@ -133,6 +134,17 @@ class _LoginScreenState extends State<LoginScreen> {
                         MaterialPageRoute(builder: (context) => ListUsers()));
                   },
                   child: Text('Users List')),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 40.0),
+            child: Builder(
+              builder: (context) => ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => WeatherApi()));
+                  },
+                  child: Text('API Data')),
             ),
           ),
         ],
