@@ -14,13 +14,13 @@ Future<void> main() async {
       home: MyApp(),
       routes: {
         '/otpscreen':(BuildContext context) => OTPScreen(),
+        '/weatherscreen':(BuildContext context) => WeatherApi(),
       },
     )
   );
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,8 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //body: LoginScreen()
-      body: WeatherApi(),
+      body: LoginScreen()
     );
   }
 }

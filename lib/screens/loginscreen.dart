@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:task_loginui/screens/listdata.dart';
@@ -11,8 +10,6 @@ import 'package:task_loginui/widgets/google_sign_in_button.dart';
 
 final colorGreen = HexColor("#09b976");
 
-final FirebaseAuth _auth = FirebaseAuth.instance;
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({ Key? key }) : super(key: key);
 
@@ -24,12 +21,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
   late String verificationId;
 
-  bool showLoadin = false;
-
   final _formKey = GlobalKey<FormState>();
 
   TextEditingController mobileNumber = TextEditingController();
   TextEditingController password = TextEditingController();
+
+  void onSubmit(){
+    if(_formKey.currentState!.validate())
+      verifyPhoneNumber(mobileNumber.text);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +63,10 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 50,
               child: ElevatedButton(
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    verifyPhoneNumber(mobileNumber.text);
-                  }
+                  // if (_formKey.currentState!.validate()) {
+                  //   verifyPhoneNumber(mobileNumber.text);
+                  // }
+                  onSubmit();
                 },
                 child: Text('Login'),
                 style: ElevatedButton.styleFrom(
