@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:task_loginui/screens/loginscreen.dart';
 import 'package:task_loginui/screens/otpScreen.dart';
-import 'package:task_loginui/weatherscreen.dart';
+import 'package:task_loginui/screens/weatherscreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

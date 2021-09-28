@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:task_loginui/utils/phoneVarification.dart';
-import 'package:task_loginui/weatherscreen.dart';
+import 'package:task_loginui/screens/weatherscreen.dart';
 
 FirebaseAuth _auth = FirebaseAuth.instance;
 

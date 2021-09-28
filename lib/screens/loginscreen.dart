@@ -5,7 +5,7 @@ import 'package:task_loginui/screens/listusers.dart';
 import 'package:task_loginui/screens/registerscreen.dart';
 import 'package:task_loginui/utils/authentication.dart';
 import 'package:task_loginui/utils/phoneVarification.dart';
-import 'package:task_loginui/weatherscreen.dart';
+import 'package:task_loginui/screens/weatherscreen.dart';
 import 'package:task_loginui/widgets/google_sign_in_button.dart';
 
 final colorGreen = HexColor("#09b976");
